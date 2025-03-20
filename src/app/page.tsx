@@ -1,30 +1,34 @@
-/*import Image from "next/image";
-import styles from "./page.module.css";*/
-import Link from "next/link";
-import Header from '@/components/Header/Header';
+import {Header} from '@/components/Header/Header';
+
+import {Jumbotron} from "@/components/Jumbotron/Jumbotron";
 
 export default function Home() {
-    const leftNavLinks = [
+    const navigationLinks = [
         {
             name: "Home",
             url: "/",
-            position: "left"
+            position: "left",
+            order: 1
         },
         {
             name: "About",
             url: "/about",
-            position: "left"
+            position: "left",
+            order: 2
         },
         {
             name: "Sign Up",
             url: "/login",
-            position: "right"
+            position: "right",
+            order: 1
         }
     ]
 
     return (
         <>
-            <Header navLinks={leftNavLinks}></Header>
+            <Header navLinks={navigationLinks}></Header>
+            <Jumbotron></Jumbotron>
         </>
-    );
+    )
+        ;
 }
